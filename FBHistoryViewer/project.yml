@@ -1,0 +1,43 @@
+name: FBHistoryViewer
+options:
+  bundleIdPrefix: com.fbhistoryviewer
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "16.0"
+  groupSortPosition: top
+  createIntermediateGroups: true
+
+packages:
+  GRDB:
+    url: https://github.com/groue/GRDB.swift
+    from: 7.0.0
+
+targets:
+  FBHistoryViewer:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: Sources/FBHistoryViewer
+        excludes:
+          - Info.plist
+    info:
+      path: Sources/FBHistoryViewer/Info.plist
+      properties:
+        CFBundleIdentifier: com.fbhistoryviewer.app
+        CFBundleName: FB History Viewer
+        CFBundleDisplayName: FB History Viewer
+        CFBundlePackageType: APPL
+        CFBundleVersion: "1"
+        CFBundleShortVersionString: "1.0"
+        NSPrincipalClass: NSApplication
+        NSHighResolutionCapable: true
+        LSMinimumSystemVersion: "14.0"
+    dependencies:
+      - package: GRDB
+        product: GRDB
+    settings:
+      base:
+        SWIFT_VERSION: "5.0"
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_HARDENED_RUNTIME: YES

@@ -1,0 +1,27 @@
+# Facebook data export — never commit personal data
+data/
+
+# Built app bundle
+*.app
+
+# Xcode build artifacts
+build/
+DerivedData/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcuserstate
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Xcode-generated
+*.xccheckout
+*.moved-aside

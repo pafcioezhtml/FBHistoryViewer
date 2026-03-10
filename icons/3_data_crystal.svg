@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2a"/>
+      <stop offset="100%" style="stop-color:#1b2838"/>
+    </linearGradient>
+    <linearGradient id="crystal1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4fc3f7;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#0288d1;stop-opacity:0.7"/>
+    </linearGradient>
+    <linearGradient id="crystal2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ce93d8;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#7b1fa2;stop-opacity:0.6"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background -->
+  <rect width="512" height="512" rx="112" fill="url(#bg3)"/>
+
+  <!-- Glow behind crystal -->
+  <ellipse cx="256" cy="270" rx="120" ry="130" fill="rgba(79,195,247,0.08)"/>
+
+  <!-- Crystal - hexagonal gem shape -->
+  <!-- Top facet -->
+  <polygon points="256,100 340,170 340,260 256,210" fill="#4fc3f7" opacity="0.6"/>
+  <polygon points="256,100 172,170 172,260 256,210" fill="#29b6f6" opacity="0.5"/>
+
+  <!-- Middle layer - messages (blue) -->
+  <polygon points="172,180 340,180 340,240 172,240" fill="rgba(79,195,247,0.3)" stroke="rgba(79,195,247,0.5)" stroke-width="1"/>
+
+  <!-- Middle layer - reactions (orange) -->
+  <polygon points="172,240 340,240 340,290 172,290" fill="rgba(255,183,77,0.3)" stroke="rgba(255,183,77,0.5)" stroke-width="1"/>
+
+  <!-- Middle layer - posts (teal) -->
+  <polygon points="172,290 340,290 340,330 172,330" fill="rgba(77,208,225,0.3)" stroke="rgba(77,208,225,0.5)" stroke-width="1"/>
+
+  <!-- Middle layer - friends (green) -->
+  <polygon points="172,330 340,330 340,360 172,360" fill="rgba(129,199,132,0.3)" stroke="rgba(129,199,132,0.5)" stroke-width="1"/>
+
+  <!-- Bottom facet -->
+  <polygon points="172,360 256,420 340,360" fill="#7b1fa2" opacity="0.4"/>
+
+  <!-- Crystal outline -->
+  <polygon points="256,100 340,170 340,360 256,420 172,360 172,170" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2.5"/>
+
+  <!-- Center line -->
+  <line x1="256" y1="100" x2="256" y2="420" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+  <!-- Top highlight -->
+  <polygon points="256,100 340,170 256,155 172,170" fill="white" opacity="0.12"/>
+
+  <!-- Clock arrow wrapping around -->
+  <path d="M360 200 A120 120 0 1 1 300 380" fill="none" stroke="rgba(255,213,79,0.6)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Arrow head -->
+  <polygon points="295,370 300,385 310,374" fill="rgba(255,213,79,0.6)"/>
+
+  <!-- Sparkles -->
+  <circle cx="200" cy="140" r="3" fill="white" opacity="0.5"/>
+  <circle cx="320" cy="150" r="2" fill="white" opacity="0.4"/>
+  <circle cx="350" cy="300" r="2.5" fill="white" opacity="0.3"/>
+  <circle cx="155" cy="310" r="2" fill="white" opacity="0.4"/>
+
+  <!-- Small label indicators -->
+  <circle cx="380" cy="210" r="6" fill="#4fc3f7"/>
+  <circle cx="380" cy="265" r="6" fill="#ffb74d"/>
+  <circle cx="380" cy="310" r="6" fill="#4dd0e1"/>
+  <circle cx="380" cy="345" r="6" fill="#81c784"/>
+</svg>

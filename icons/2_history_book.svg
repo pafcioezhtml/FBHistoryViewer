@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6a1b9a"/>
+      <stop offset="100%" style="stop-color:#1565c0"/>
+    </linearGradient>
+    <linearGradient id="page" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f5f5f5"/>
+      <stop offset="100%" style="stop-color:#e0e0e0"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background -->
+  <rect width="512" height="512" rx="112" fill="url(#bg2)"/>
+
+  <!-- Book shadow — pushed down, smaller -->
+  <path d="M130 390 L256 415 L382 390 L382 230 L256 255 L130 230 Z" fill="rgba(0,0,0,0.15)" transform="translate(4,4)"/>
+
+  <!-- Left page — pushed down, smaller, more transparent -->
+  <path d="M130 385 L256 410 L256 245 L130 220 Z" fill="url(#page)" opacity="0.7"/>
+  <!-- Left page lines -->
+  <line x1="150" y1="255" x2="238" y2="275" stroke="#bdbdbd" stroke-width="2"/>
+  <line x1="150" y1="275" x2="238" y2="295" stroke="#bdbdbd" stroke-width="2"/>
+  <line x1="150" y1="295" x2="238" y2="315" stroke="#bdbdbd" stroke-width="2"/>
+  <line x1="150" y1="315" x2="238" y2="335" stroke="#bdbdbd" stroke-width="2"/>
+  <line x1="150" y1="335" x2="210" y2="348" stroke="#bdbdbd" stroke-width="2"/>
+
+  <!-- Right page — pushed down, smaller, more transparent -->
+  <path d="M256 410 L382 385 L382 220 L256 245 Z" fill="white" opacity="0.7"/>
+  <!-- Right page lines -->
+  <line x1="274" y1="275" x2="365" y2="255" stroke="#bdbdbd" stroke-width="2"/>
+  <line x1="274" y1="295" x2="365" y2="275" stroke="#bdbdbd" stroke-width="2"/>
+  <line x1="274" y1="315" x2="365" y2="295" stroke="#bdbdbd" stroke-width="2"/>
+  <line x1="274" y1="335" x2="365" y2="315" stroke="#bdbdbd" stroke-width="2"/>
+
+  <!-- Book spine -->
+  <line x1="256" y1="245" x2="256" y2="410" stroke="rgba(0,0,0,0.12)" stroke-width="3"/>
+
+  <!-- Floating heart — large, prominent -->
+  <g transform="translate(60, 60) scale(1.8)">
+    <path d="M25 45 C25 35, 10 25, 10 35 C10 50, 25 60, 25 60 C25 60, 40 50, 40 35 C40 25, 25 35, 25 45Z" fill="#e91e63"/>
+  </g>
+
+  <!-- Floating chat bubble — large, prominent -->
+  <g transform="translate(245, 30)">
+    <rect x="0" y="0" width="75" height="52" rx="16" fill="#4fc3f7"/>
+    <polygon points="16,52 26,66 34,52" fill="#4fc3f7"/>
+    <circle cx="22" cy="26" r="6" fill="white"/>
+    <circle cx="38" cy="26" r="6" fill="white"/>
+    <circle cx="54" cy="26" r="6" fill="white"/>
+  </g>
+
+  <!-- Floating thumbs up — large, prominent -->
+  <g transform="translate(345, 100)">
+    <circle cx="30" cy="30" r="38" fill="#ffb74d"/>
+    <text x="30" y="40" text-anchor="middle" font-size="40">&#x1F44D;</text>
+  </g>
+
+  <!-- Floating person silhouette — large, prominent -->
+  <g transform="translate(200, 150)">
+    <circle cx="28" cy="12" r="18" fill="#81c784"/>
+    <ellipse cx="28" cy="46" rx="24" ry="18" fill="#81c784"/>
+  </g>
+
+  <!-- Sparkle particles -->
+  <circle cx="210" cy="100" r="4" fill="white" opacity="0.6"/>
+  <circle cx="350" cy="60" r="3.5" fill="white" opacity="0.5"/>
+  <circle cx="160" cy="130" r="3.5" fill="white" opacity="0.4"/>
+  <circle cx="420" cy="80" r="3" fill="white" opacity="0.5"/>
+  <circle cx="240" cy="170" r="3" fill="white" opacity="0.35"/>
+</svg>

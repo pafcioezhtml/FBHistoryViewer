@@ -1,4 +1,4 @@
-# FBHistoryViewer
+# My Social History
 
 A native macOS app for exploring your Facebook data export. Import your data once, then browse statistics, charts, and a chronological activity feed — all stored locally, nothing leaves your machine.
 
@@ -11,37 +11,48 @@ A native macOS app for exploring your Facebook data export. Import your data onc
 
 1. Request your data from Facebook: **Settings → Your Facebook information → Download your information**. Select **JSON** format and include at least: Messages, Posts, Likes and reactions, Comments.
 2. Download and unzip the export.
-3. Open FBHistoryViewer and point it at the unzipped folder. Import takes a minute or two depending on how much data you have.
+3. Open My Social History and point it at the unzipped folder. Import takes a minute or two depending on how much data you have.
 
 You can import multiple exports (e.g. from different date ranges) — the app merges them and deduplicates automatically.
 
 ## Features
 
 **Statistics**
-- Overview: total counts for messages, posts, reactions, comments
+- Overview: total counts for messages, posts, reactions, comments, friends
 - Messages: volume over time with per-conversation overlay, top conversations, average message length by year, most shared domains
+- Message Reactions: reactions over time, top reaction emojis (donut chart), most emotional conversations (individual & group)
 - Posts: posts per year (own / wall / group), average post length, most tagged people
 - Activity: comments and reactions per month, activity by hour and weekday, reaction breakdown, people you commented on and reacted to most
+- Friends: friend count over time
+- Logins: login activity and locations
+- Search History: your Facebook searches over time
 
 **Activity Feed**
-- Separate browsable lists for Posts, Comments, and Likes
+- Posts: browsable with tabs for My Posts, Wall Posts, and Group Posts
+- Comments and Likes: separate browsable lists
+- Recent Visits: tabbed by Events, Groups, Profiles, and Pages
+- Notifications: browsable notification history
 - Full-text search in each feed
+
+**Profile**
+- Profile data overview
+- Profile changes history
 
 ## Building from source
 
-Requires Xcode 16+ and [xcodegen](https://github.com/yonaskolb/XcodeGen).
+Requires Xcode 16+.
 
 ```bash
-cd FBHistoryViewer
-xcodegen
-open FBHistoryViewer.xcodeproj
+cd MySocialHistory
+xcodebuild -project MySocialHistory.xcodeproj -scheme MySocialHistory -configuration Debug -derivedDataPath build/derived -destination 'platform=macOS' build
+open build/derived/Build/Products/Debug/MySocialHistory.app
 ```
 
 The only external dependency is [GRDB.swift](https://github.com/groue/GRDB.swift), fetched automatically by Swift Package Manager.
 
 ## Data & privacy
 
-All data is stored in `~/Library/Application Support/FBHistoryViewer/history.sqlite` on your own machine. Nothing is uploaded or shared anywhere.
+All data is stored in `~/Library/Application Support/MySocialHistory/history.sqlite` on your own machine. Nothing is uploaded or shared anywhere.
 
 ## Notes
 

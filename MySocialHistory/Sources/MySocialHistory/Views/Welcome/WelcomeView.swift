@@ -40,7 +40,7 @@ struct WelcomeView: View {
                 Group {
                     bulletRow("The extracted zip folder (e.g. facebook-name-2024-…)")
                     bulletRow("The your_facebook_activity subfolder directly")
-                    bulletRow("Any parent folder that contains a Facebook export")
+                    bulletRow("Any parent folder that contains all your Facebook exports, extracted")
                 }
                 .font(.callout)
                 .foregroundStyle(.secondary)

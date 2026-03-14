@@ -47,27 +47,6 @@ struct SidebarView: View {
         }
         .listStyle(.sidebar)
         .navigationTitle("My Social History")
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button {
-                    showImportPicker()
-                } label: {
-                    Label("Re-import", systemImage: "arrow.clockwise")
-                }
-                .help("Import a new Facebook data export")
-            }
-        }
     }
 
-    private func showImportPicker() {
-        let panel = NSOpenPanel()
-        panel.canChooseFiles = false
-        panel.canChooseDirectories = true
-        panel.allowsMultipleSelection = false
-        panel.message = "Select your Facebook data export folder"
-        panel.prompt = "Import"
-        if panel.runModal() == .OK, let url = panel.url {
-            appState.startImport(from: url)
-        }
-    }
 }

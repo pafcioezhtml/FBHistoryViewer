@@ -30,6 +30,7 @@ enum SidebarItem: Hashable {
 struct ContentView: View {
     @Environment(AppState.self) var appState
     @State private var selectedItem: SidebarItem? = .statsOverview
+    @State private var showHelp = false
     @State private var profileVM      = ProfileViewModel()
     @State private var statsVM        = StatisticsViewModel()
     @State private var feedPostsVM    = FeedViewModel(filter: .posts)
@@ -80,44 +81,90 @@ struct ContentView: View {
         NavigationSplitView {
             SidebarView(selectedItem: $selectedItem)
         } detail: {
-            switch selectedItem {
-            case .profile:
-                ProfileView(viewModel: profileVM)
-            case .profileChanges:
-                ProfileChangesView(viewModel: profileChangesVM)
-            case .statsOverview:
-                StatsOverviewView(viewModel: statsVM)
-            case .statsMessages:
-                StatsMessagesView(viewModel: statsVM)
-            case .statsPosts:
-                StatsPostsView(viewModel: statsVM)
-            case .statsActivity:
-                StatsActivityView(viewModel: statsVM)
-            case .statsFriends:
-                StatsFriendsView(viewModel: statsVM)
-            case .statsLogins:
-                StatsLoginsView(viewModel: statsVM)
-            case .statsSearches:
-                StatsSearchesView(viewModel: statsVM)
-            case .statsMsgReactions:
-                StatsMsgReactionsView(viewModel: statsVM)
-            case .feedPosts:
-                FeedView(viewModel: feedPostsVM)
-            case .feedComments:
-                FeedView(viewModel: feedCommentsVM)
-            case .feedLikes:
-                FeedView(viewModel: feedLikesVM)
-            case .feedSearches:
-                SearchFeedView(viewModel: searchFeedVM)
-            case .feedNotifications:
-                NotificationFeedView(viewModel: notifFeedVM)
-            case .feedVisits:
-                VisitFeedView(viewModel: visitFeedVM)
-            case nil:
-                Text("Select a section")
-                    .foregroundStyle(.secondary)
+            HStack(spacing: 0) {
+                detailView
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                if showHelp {
+                    Divider()
+                    HelpSidebar(item: selectedItem)
+                        .frame(width: 280)
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    HStack(spacing: 8) {
+                        Button {
+                            showImportPicker()
+                        } label: {
+                            Label("Re-import data", systemImage: "arrow.clockwise")
+                                .labelStyle(.titleAndIcon)
+                        }
+                        .help("Import a new Facebook data export")
+
+                        Button {
+                            withAnimation { showHelp.toggle() }
+                        } label: {
+                            Label("Help", systemImage: "questionmark")
+                                .font(.system(size: 14, weight: .semibold))
+                        }
+                        .help("Toggle help sidebar")
+                    }
+                }
             }
         }
         .navigationTitle(selectedItem?.title ?? "My Social History")
+    }
+
+    private func showImportPicker() {
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = false
+        panel.canChooseDirectories = true
+        panel.allowsMultipleSelection = false
+        panel.message = "Select your Facebook data export folder"
+        panel.prompt = "Import"
+        if panel.runModal() == .OK, let url = panel.url {
+            appState.startImport(from: url)
+        }
+    }
+
+    @ViewBuilder
+    private var detailView: some View {
+        switch selectedItem {
+        case .profile:
+            ProfileView(viewModel: profileVM)
+        case .profileChanges:
+            ProfileChangesView(viewModel: profileChangesVM)
+        case .statsOverview:
+            StatsOverviewView(viewModel: statsVM)
+        case .statsMessages:
+            StatsMessagesView(viewModel: statsVM)
+        case .statsPosts:
+            StatsPostsView(viewModel: statsVM)
+        case .statsActivity:
+            StatsActivityView(viewModel: statsVM)
+        case .statsFriends:
+            StatsFriendsView(viewModel: statsVM)
+        case .statsLogins:
+            StatsLoginsView(viewModel: statsVM)
+        case .statsSearches:
+            StatsSearchesView(viewModel: statsVM)
+        case .statsMsgReactions:
+            StatsMsgReactionsView(viewModel: statsVM)
+        case .feedPosts:
+            FeedView(viewModel: feedPostsVM)
+        case .feedComments:
+            FeedView(viewModel: feedCommentsVM)
+        case .feedLikes:
+            FeedView(viewModel: feedLikesVM)
+        case .feedSearches:
+            SearchFeedView(viewModel: searchFeedVM)
+        case .feedNotifications:
+            NotificationFeedView(viewModel: notifFeedVM)
+        case .feedVisits:
+            VisitFeedView(viewModel: visitFeedVM)
+        case nil:
+            Text("Select a section")
+                .foregroundStyle(.secondary)
+        }
     }
 }

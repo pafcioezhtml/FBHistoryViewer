@@ -42,5 +42,6 @@ struct ReactionBreakdownChart: View {
                 }
             }
         }
+        .copyable()
     }
 }

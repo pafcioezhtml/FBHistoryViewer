@@ -45,6 +45,7 @@ struct ActivityHeatmapView: View {
                 legendRow
             }
         }
+        .copyable()
     }
 
     private func cell(count: Int) -> some View {

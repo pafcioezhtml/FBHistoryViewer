@@ -23,6 +23,7 @@ struct TaggedPeopleView: View {
                 }
             }
         }
+        .copyable()
     }
 }
 
@@ -116,6 +117,7 @@ struct PostLengthChart: View {
                 .frame(height: 220)
             }
         }
+        .copyable()
     }
 }
 
@@ -175,5 +177,6 @@ struct PostsOverTimeChart: View {
                     .padding(.top, 4)
             }
         }
+        .copyable()
     }
 }

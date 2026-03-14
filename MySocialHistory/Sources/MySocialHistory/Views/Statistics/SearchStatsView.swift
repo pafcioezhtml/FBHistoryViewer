@@ -43,6 +43,7 @@ private struct SearchSummaryCard: View {
                          icon: "text.magnifyingglass", color: .purple)
             }
         }
+        .copyable()
     }
 
     private func statCell(_ label: String, value: String, icon: String, color: Color) -> some View {
@@ -86,6 +87,7 @@ private struct SearchFrequencyChart: View {
                 .frame(height: 220)
             }
         }
+        .copyable()
     }
 }
 
@@ -119,6 +121,7 @@ private struct SearchByHourChart: View {
                 .frame(height: 200)
             }
         }
+        .copyable()
     }
 }
 
@@ -154,5 +157,6 @@ private struct TopSearchQueriesView: View {
                 }
             }
         }
+        .copyable()
     }
 }

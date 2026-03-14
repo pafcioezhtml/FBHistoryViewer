@@ -29,6 +29,7 @@ struct EngagementListsView: View {
             }
             englishOnlyNote
         }
+        .copyable()
     }
 
     // MARK: - Reacted To
@@ -49,6 +50,7 @@ struct EngagementListsView: View {
             }
             englishOnlyNote
         }
+        .copyable()
     }
 
     private var englishOnlyNote: some View {

@@ -58,6 +58,7 @@ private struct FriendsSummaryCard: View {
                 statCell("All Time", value: currentCount + removedCount, icon: "person.3.fill", color: .green)
             }
         }
+        .copyable()
     }
 
     private func statCell(_ label: String, value: Int, icon: String, color: Color) -> some View {
@@ -123,6 +124,7 @@ private struct FriendsGrowthChart: View {
                 .frame(height: 250)
             }
         }
+        .copyable()
     }
 }
 
@@ -239,6 +241,7 @@ private struct FriendsAddedPerYearChart: View {
                 .frame(height: 220)
             }
         }
+        .copyable()
     }
 }
 
@@ -264,6 +267,7 @@ private struct RemovedFriendsView: View {
                 }
             }
         }
+        .copyable()
     }
 }
 
@@ -312,6 +316,7 @@ private struct RejectedRequestsView: View {
                 }
             }
         }
+        .copyable()
     }
 }
 

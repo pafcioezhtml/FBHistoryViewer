@@ -47,6 +47,7 @@ struct ActivityByHourChart: View {
                 .frame(height: 180)
             }
         }
+        .copyable()
     }
 
     private func hourLabel(_ h: Int) -> String {
@@ -104,5 +105,6 @@ struct ActivityByWeekdayChart: View {
                 .frame(height: 180)
             }
         }
+        .copyable()
     }
 }

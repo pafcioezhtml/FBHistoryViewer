@@ -16,6 +16,7 @@ struct OverviewStatsCard: View {
             }
             .padding(.top, 4)
         }
+        .copyable()
     }
 
     private func statCell(label: String, value: Int, icon: String, color: Color) -> some View {
@@ -51,6 +52,7 @@ struct PostsBreakdownCard: View {
             .padding(.top, 4)
             englishOnlyNote
         }
+        .copyable()
     }
 
     private var englishOnlyNote: some View {
@@ -108,6 +110,7 @@ struct ReactionsBreakdownCard: View {
             }
             .padding(.top, 4)
         }
+        .copyable()
     }
 
     private func reactionCell(entry: Entry) -> some View {

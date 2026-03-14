@@ -83,6 +83,7 @@ struct MessagesOverTimeChart: View {
                 }
             }
         }
+        .copyable()
     }
 
     // MARK: - Overlay bars (same as before)

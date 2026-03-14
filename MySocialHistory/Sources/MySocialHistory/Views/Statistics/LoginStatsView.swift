@@ -59,6 +59,7 @@ private struct LoginSummaryCard: View {
                          color: .green)
             }
         }
+        .copyable()
     }
 
     private func statCell(_ label: String, value: String, icon: String, color: Color) -> some View {
@@ -116,6 +117,7 @@ private struct LoginActivityChart: View {
                 .frame(height: 220)
             }
         }
+        .copyable()
     }
 }
 
@@ -151,6 +153,7 @@ private struct LoginByHourChart: View {
                 .frame(height: 200)
             }
         }
+        .copyable()
     }
 }
 
@@ -202,6 +205,7 @@ private struct DeviceBreakdownChart: View {
                 .padding(.vertical, 4)
             }
         }
+        .copyable()
     }
 
     private func percentage(_ count: Int) -> String {
@@ -289,6 +293,7 @@ private struct TopCitiesView: View {
                 }
             }
         }
+        .copyable()
         .task(id: cities.map(\.id)) {
             await geocodeCities()
         }

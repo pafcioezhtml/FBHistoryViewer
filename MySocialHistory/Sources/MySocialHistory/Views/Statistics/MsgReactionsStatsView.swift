@@ -101,6 +101,7 @@ private struct MsgReactionSummaryCard: View {
         .background(.background)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .shadow(color: .black.opacity(0.08), radius: 4, y: 2)
+        .copyable()
     }
 
     private func summaryCell(icon: String? = nil, emoji: String? = nil, color: Color, value: String, label: String) -> some View {
@@ -166,6 +167,7 @@ private struct MsgReactionsOverTimeChart: View {
         .background(.background)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .shadow(color: .black.opacity(0.08), radius: 4, y: 2)
+        .copyable()
     }
 }
 
@@ -212,6 +214,7 @@ private struct TopMsgReactionEmojisChart: View {
                 }
             }
         }
+        .copyable()
     }
 }
 
@@ -285,5 +288,6 @@ private struct MostEmotionalConversationsView: View {
         .background(.background)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .shadow(color: .black.opacity(0.08), radius: 4, y: 2)
+        .copyable()
     }
 }

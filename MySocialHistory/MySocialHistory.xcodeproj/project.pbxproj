@@ -36,6 +36,7 @@
 		65986C6E46D7CDCA6C172CA3 /* CommentsReactionsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C63186243A1F9953726BC5 /* CommentsReactionsChart.swift */; };
 		688621A943553ABB4C170A1A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4339AF7F0AB9082115CF5A /* WelcomeView.swift */; };
 		72A67D5EAEF62DC3528FCF63 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523AC097146222D7557C478F /* AppState.swift */; };
+		A1B2C3D4E5F60A1B2C3D4E5F /* CopyableOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E9A2B1D5F8E7A6B4C2D3E /* CopyableOverlay.swift */; };
 		7DC1AE0167F59AF089A078BC /* TopContactsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC02BEFC738D494657CFE8 /* TopContactsChart.swift */; };
 		7ECEAACD3D227CA85510DF7A /* MessageFileDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE327DEA0D72EF0E9646BE1A /* MessageFileDecoder.swift */; };
 		86DB89790B161EB9691B3AE9 /* LikeImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190549153E5BDB4FBAB0E582 /* LikeImporter.swift */; };
@@ -111,6 +112,7 @@
 		705C5467B35CD4C1F5226839 /* CommentFileDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentFileDecoder.swift; sourceTree = "<group>"; };
 		7095BB10545AF50A0405AA33 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		729D2C53D6E0840FD77BA197 /* ImportPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPipeline.swift; sourceTree = "<group>"; };
+		7C3E9A2B1D5F8E7A6B4C2D3E /* CopyableOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableOverlay.swift; sourceTree = "<group>"; };
 		7A4D0DEAF6BB53B441C41A28 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		7E1C1EA1C3D1D188BFD2F5B6 /* ProfileImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImporter.swift; sourceTree = "<group>"; };
 		7E7FAD8BFCF1FECAB94D7F80 /* MessageImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageImporter.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				2B9781716F62622DF122343D /* ActivityByHourChart.swift */,
 				5F77142A8BE0B4CCFCB3E4C4 /* ActivityHeatmapView.swift */,
 				19C63186243A1F9953726BC5 /* CommentsReactionsChart.swift */,
+				7C3E9A2B1D5F8E7A6B4C2D3E /* CopyableOverlay.swift */,
 				56A27874877DCDD6D7BB4920 /* EngagementListsView.swift */,
 				AA6666666666666666666666 /* FriendsStatsView.swift */,
 				BB6666666666666666666666 /* LoginStatsView.swift */,
@@ -493,6 +496,7 @@
 				98E32AE35BCF5E2D6B1C169E /* CommentImporter.swift in Sources */,
 				BF83700035A8030EAE93D2A6 /* CommentRecord.swift in Sources */,
 				65986C6E46D7CDCA6C172CA3 /* CommentsReactionsChart.swift in Sources */,
+				A1B2C3D4E5F60A1B2C3D4E5F /* CopyableOverlay.swift in Sources */,
 				B53AE5FCC969F04A222B19AC /* ContentView.swift in Sources */,
 				5288F096E308B01A00DC3148 /* DatabaseManager.swift in Sources */,
 				00BC1AC1C698A5F6B2608DF2 /* EncodingFix.swift in Sources */,

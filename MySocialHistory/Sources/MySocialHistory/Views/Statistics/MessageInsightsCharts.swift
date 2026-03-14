@@ -51,6 +51,7 @@ struct MessageLengthOverTimeChart: View {
                 .frame(height: 220)
             }
         }
+        .copyable()
     }
 }
 
@@ -78,6 +79,7 @@ struct SharedDomainsView: View {
                 }
             }
         }
+        .copyable()
     }
 }
 

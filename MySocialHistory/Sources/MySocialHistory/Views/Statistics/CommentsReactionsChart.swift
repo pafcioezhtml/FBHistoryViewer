@@ -40,6 +40,7 @@ struct CommentsPerMonthChart: View {
                 .frame(height: 180)
             }
         }
+        .copyable()
     }
 }
 
@@ -106,5 +107,6 @@ struct ReactionsPerMonthChart: View {
                 .frame(height: 180)
             }
         }
+        .copyable()
     }
 }

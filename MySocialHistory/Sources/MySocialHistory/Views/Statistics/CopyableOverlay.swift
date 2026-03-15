@@ -74,7 +74,9 @@ struct CopyableOverlay: ViewModifier {
                 [.boundsIgnoreFraming, .bestResolution]
             ) else { return }
 
-            let image = NSImage(cgImage: cgImage, size: screenRect.size)
+            let image = Self.addWatermark(
+                to: NSImage(cgImage: cgImage, size: screenRect.size)
+            )
 
             NSPasteboard.general.clearContents()
             NSPasteboard.general.setData(image.tiffRepresentation!, forType: .tiff)
@@ -85,6 +87,57 @@ struct CopyableOverlay: ViewModifier {
                 withAnimation { showCopied = false }
             }
         }
+    }
+
+    // MARK: - Watermark
+
+    private static func addWatermark(to source: NSImage) -> NSImage {
+        let size = source.size
+        let result = NSImage(size: size)
+        result.lockFocus()
+
+        // Draw the original image
+        source.draw(in: NSRect(origin: .zero, size: size))
+
+        // Load app icon
+        let appIcon = NSApp.applicationIconImage ?? NSImage()
+        let iconSize: CGFloat = 16
+        let labelFont = NSFont.systemFont(ofSize: 11, weight: .medium)
+        let labelText = "My Social History"
+        let labelAttrs: [NSAttributedString.Key: Any] = [
+            .font: labelFont,
+            .foregroundColor: NSColor.secondaryLabelColor,
+        ]
+        let labelSize = (labelText as NSString).size(withAttributes: labelAttrs)
+
+        let padding: CGFloat = 6
+        let spacing: CGFloat = 4
+        let badgeW = padding + iconSize + spacing + labelSize.width + padding
+        let badgeH = max(iconSize, labelSize.height) + padding * 2
+
+        // Position in top-right (NSImage origin is bottom-left)
+        let badgeX = size.width - badgeW - 8
+        let badgeY = size.height - badgeH - 8
+
+        // Draw pill background
+        let badgeRect = NSRect(x: badgeX, y: badgeY, width: badgeW, height: badgeH)
+        let pill = NSBezierPath(roundedRect: badgeRect, xRadius: badgeH / 2, yRadius: badgeH / 2)
+        NSColor(white: 1.0, alpha: 0.45).setFill()
+        pill.fill()
+
+        // Draw icon
+        let iconY = badgeY + (badgeH - iconSize) / 2
+        appIcon.draw(in: NSRect(x: badgeX + padding, y: iconY, width: iconSize, height: iconSize))
+
+        // Draw label
+        let labelY = badgeY + (badgeH - labelSize.height) / 2
+        (labelText as NSString).draw(
+            at: NSPoint(x: badgeX + padding + iconSize + spacing, y: labelY),
+            withAttributes: labelAttrs
+        )
+
+        result.unlockFocus()
+        return result
     }
 
     /// Walk up the superview chain and pick the view whose size best matches `targetSize`.

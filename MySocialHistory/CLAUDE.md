@@ -43,6 +43,13 @@ New resources must also be added to PBXResourcesBuildPhase.
 - Bundle ID: `com.mysocialhistory.app`
 - Database location: `~/Library/Application Support/MySocialHistory/history.sqlite`
 
+## UI Patterns
+
+- **Copyable overlay**: `.copyable()` modifier on all GroupBoxes/stat cards in Statistics views. Uses `CopyableOverlay` ViewModifier with `CGWindowListCreateImage` to capture the window region. Button hides before screenshot to avoid appearing in the image.
+- **Help sidebar**: `HelpSidebar.swift` displays contextual help per `SidebarItem`. Toggled by `?` button in the detail toolbar. Implemented as a manual `HStack` column in the detail area (not `.inspector()` — that adds an unwanted `>>` toggle button).
+- **Toolbar layout**: Re-import and help buttons are in a single `ToolbarItem(placement: .primaryAction)` with `HStack` in `ContentView`. The sidebar has no toolbar items (avoids conflict with the sidebar toggle button on collapse/expand).
+- **SidebarItem extensions**: `icon`, `iconColor`, and `helpSections` are defined in `HelpSidebar.swift`.
+
 ## App Icon
 
 Source SVG: `../icons/2_history_book.svg`

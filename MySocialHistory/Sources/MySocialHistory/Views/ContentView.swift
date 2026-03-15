@@ -31,6 +31,7 @@ struct ContentView: View {
     @Environment(AppState.self) var appState
     @State private var selectedItem: SidebarItem? = .statsOverview
     @State private var showHelp = false
+    @State private var showExportGuide = false
     @State private var profileVM      = ProfileViewModel()
     @State private var statsVM        = StatisticsViewModel()
     @State private var feedPostsVM    = FeedViewModel(filter: .posts)
@@ -67,6 +68,11 @@ struct ContentView: View {
                 visitFeedVM.reload()
             }
         }
+        .sheet(isPresented: $showExportGuide) {
+            FacebookExportGuideView()
+        }
+        .focusedSceneValue(\.toggleHelp, $showHelp)
+        .focusedSceneValue(\.showExportGuide, $showExportGuide)
         .alert("Import Error", isPresented: Binding(
             get: { appState.importError != nil },
             set: { if !$0 { appState.importError = nil } }

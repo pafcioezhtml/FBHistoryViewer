@@ -31,6 +31,7 @@ struct MySocialHistoryApp: App {
         .windowToolbarStyle(.unified)
         .commands {
             CommandGroup(replacing: .newItem) {}
+            HelpCommands()
         }
     }
 }
